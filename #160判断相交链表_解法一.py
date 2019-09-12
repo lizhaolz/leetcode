@@ -4,10 +4,8 @@
 1. 常规情况：A链表和B链表至少都有一个节点
    先遍历一遍，得到两链表的长度，之后先让长的链表走到两个长度相等的地方
    之后两个链表从长度开始的地方一起走，如果相交，返回交点，
-   如果不相交，则同时返回Null。
-2. 链表头相等，任意返回一个
-3. A链只有一个节点，B链为空，且headA.next == headB，返回headB
-4. 一个是另一个子链，解法同情况一
+   如果不相交，则同时返回None。
+2. 一个链表为空，直接返回空
 """
 # 代码
 class ListNode(object):
@@ -18,12 +16,11 @@ class ListNode(object):
 
 class Solution(object):
     def getIntersectionNode(self, headA, headB):
-        if headA == headB:  # 情况2
-            return headA
-        if headA and headA.next == headB:  # 情况3
-            return headB
-        if headB and headB.next == headA:  # 情况3
-            return headA
+         
+         # 情况2
+        if headA is None or headB is None:
+            return None
+             
         # 情况1
         lengthA = 0
         curA = headA
