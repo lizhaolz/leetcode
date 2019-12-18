@@ -84,3 +84,4 @@ class Solution(object):
             intv *= 2
         return res.next
 
+
